@@ -3,10 +3,12 @@ import random
 import pygame
 
 DEFAULT_IMAGE_SIZE = (20, 20)
+ICON_DIMS = (150, 150)
 
 imgsPath = "./assets/images/"
 types = ["rock", "paper", "scissors", "lizard", "spock"]
 imgs = [pygame.transform.scale(pygame.image.load(f"{imgsPath}{t}.png"), DEFAULT_IMAGE_SIZE) for t in types]
+icons = [pygame.transform.scale(pygame.image.load(f"{imgsPath}{t}.png"), ICON_DIMS) for t in types]
 
 matchups_won = [[2, 3], [0, 4], [1, 3], [1, 4], [0, 2]]
 

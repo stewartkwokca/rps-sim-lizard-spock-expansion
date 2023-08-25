@@ -2,6 +2,7 @@ import pygame
 import screen
 import time
 import entityManager
+import sidebar
 
 pygame.init()
 
@@ -14,10 +15,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    window.fill(screen.BG_COLOR)
+    window.fill(screen.WHITE)
 
     entityManager.tick()
     entityManager.render(window)
+
+    sidebar.render(window)
 
     time.sleep(0.05)
     pygame.display.update()
