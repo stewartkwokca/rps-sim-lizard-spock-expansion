@@ -2,11 +2,11 @@ import entity
 import screen
 from random import randint
 
-START_COUNT = 100
+START_COUNT_PER_TYPE = 125
 
 entities = []
 for i in range(5):
-    for j in range(START_COUNT):
+    for j in range(START_COUNT_PER_TYPE):
         entities.append(entity.Entity(randint(20, screen.WIDTH - 20), randint(20, screen.HEIGHT - 20), i))
 
 def tick():
