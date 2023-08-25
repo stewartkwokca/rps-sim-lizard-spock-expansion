@@ -17,8 +17,5 @@ def render(window):
         text = f"{entityManager.counts[index]}"
         text_size = font.size(text)
         text_buffer_y = (screen.HEIGHT - (text_size[1] * len(entity.imgs))) / (len(entity.imgs) + 1)
-        renderText(text, font, screen.WHITE, screen.WIDTH + (screen.SIDEBAR_WIDTH-text_size[0])/2, text_buffer_y * (index+1) + text_size[1] * index, window)
+        screen.renderText(text, font, screen.WHITE, screen.WIDTH + (screen.SIDEBAR_WIDTH-text_size[0])/2, text_buffer_y * (index+1) + text_size[1] * index, window)
         index += 1
-def renderText(text, font, text_col, x, y, window):
-    img = font.render(text, True, text_col)
-    window.blit(img, (x, y))

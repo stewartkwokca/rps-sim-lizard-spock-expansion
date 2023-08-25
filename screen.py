@@ -16,3 +16,7 @@ def screenSetup():
 
     return screen
 
+def renderText(text, font, text_col, x, y, window):
+    img = font.render(text, True, text_col)
+    window.blit(img, (x, y))
+
