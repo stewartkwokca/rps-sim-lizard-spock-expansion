@@ -3,6 +3,7 @@ import screen
 import time
 import entityManager
 import sidebar
+import graph
 
 pygame.init()
 
@@ -15,6 +16,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    graph.dataUpdate()
     window.fill(screen.WHITE)
 
     entityManager.tick()
@@ -23,4 +25,8 @@ while running:
     sidebar.render(window)
 
     time.sleep(0.05)
+
     pygame.display.update()
+
+    if entityManager.simOver():
+        graph.createGraph()
