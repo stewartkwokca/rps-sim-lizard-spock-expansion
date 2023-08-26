@@ -15,7 +15,9 @@ def createGraph():
         plt.title("Entities Per Type")
         for j in range(len(data)):
             plt.plot([i for i in range(len(data[0]))], data[j])
-        plt.legend(entity.types)
+        plt.legend([e.capitalize() for e in entity.types])
+        plt.xlabel("Ticks")
+        plt.ylabel("Entities")
         plt.show()
         graphed = True
 
